@@ -577,7 +577,7 @@ function App() {
     compliance_matrix: null,
     notification_decision: null
   });
-  const [showWorkflowMenu, setShowWorkflowMenu] = useState(false);
+  const [showWorkflowMenu, setShowWorkflowMenu] = useState(true);
 
 
   const handleInputChange = (field, value) => {
