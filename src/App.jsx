@@ -548,6 +548,8 @@ const comprehensiveConfig = {
 function App() {
   const [activeTab, setActiveTab] = useState('upload');
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
     zone: '',
     activity: '',
@@ -577,13 +579,6 @@ function App() {
   });
   const [showWorkflowMenu, setShowWorkflowMenu] = useState(false);
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setUploadedFile(file);
-      setActiveTab('assessment');
-    }
-  };
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
