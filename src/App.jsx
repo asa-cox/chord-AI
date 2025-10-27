@@ -577,14 +577,6 @@ function App() {
   });
   const [showWorkflowMenu, setShowWorkflowMenu] = useState(false);
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setUploadedFile(file);
-      setActiveTab('assessment');
-    }
-  };
-
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
