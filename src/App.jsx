@@ -566,9 +566,6 @@ function App() {
     notification: false,
     aiRecommendations: false
   });
-  const [uploadedFile, setUploadedFile] = useState(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [isProcessing, setIsProcessing] = useState(false);
   
   // NEW WORKFLOW STATE
   const [workflowStage, setWorkflowStage] = useState(null);
@@ -579,6 +576,14 @@ function App() {
     notification_decision: null
   });
   const [showWorkflowMenu, setShowWorkflowMenu] = useState(false);
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setUploadedFile(file);
+      setActiveTab('assessment');
+    }
+  };
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
