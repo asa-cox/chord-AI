@@ -566,6 +566,9 @@ function App() {
     notification: false,
     aiRecommendations: false
   });
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
   
   // NEW WORKFLOW STATE
   const [workflowStage, setWorkflowStage] = useState(null);
